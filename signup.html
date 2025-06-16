@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Phiwokuhle Technologies</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+      }
+      .form-group.error input,
+      .form-group.error textarea {
+        border-color: #dc3545;
+      }
+      .form-group.success input,
+      .form-group.success textarea {
+        border-color: #28a745;
+      }
+      .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+      }
+      .form-group {
+        position: relative;
+      }
+      .password-requirements {
+        font-size: 0.875rem;
+        color: #666;
+        margin-top: 0.5rem;
+      }
+      .requirement {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.25rem;
+      }
+      .requirement i {
+        margin-right: 0.5rem;
+        font-size: 0.75rem;
+      }
+      .requirement.valid {
+        color: #28a745;
+      }
+      .requirement.invalid {
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              minlength="2"
+              pattern="[A-Za-z\s]+"
+              title="Please enter a valid name (letters and spaces only)"
+            />
+            <div class="error-message" id="name-error">Please enter a valid name (letters and spaces only)</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Please enter a valid email address"
+            />
+            <div class="error-message" id="email-error">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required 
+              minlength="8"
+              title="Password must be at least 8 characters long"
+            />
+            <i class="fas fa-eye password-toggle" id="toggle-password"></i>
+            <div class="error-message" id="password-error">Password must meet all requirements</div>
+            <div class="password-requirements">
+              <div class="requirement" id="length-req">
+                <i class="fas fa-times"></i>
+                At least 8 characters
+              </div>
+              <div class="requirement" id="uppercase-req">
+                <i class="fas fa-times"></i>
+                At least one uppercase letter
+              </div>
+              <div class="requirement" id="lowercase-req">
+                <i class="fas fa-times"></i>
+                At least one lowercase letter
+              </div>
+              <div class="requirement" id="number-req">
+                <i class="fas fa-times"></i>
+                At least one number
+              </div>
+              <div class="requirement" id="special-req">
+                <i class="fas fa-times"></i>
+                At least one special character
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <textarea 
+              id="address" 
+              name="address" 
+              required 
+              minlength="10"
+              title="Please enter a valid delivery address"
+            ></textarea>
+            <div class="error-message" id="address-error">Please enter a valid delivery address (at least 10 characters)</div>
+          </div>
+          <button type="submit" class="btn-primary" id="submit-btn">Sign Up</button>
+        </form>
+        <p class="auth-link">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signup-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const addressInput = document.getElementById('address');
+        const submitBtn = document.getElementById('submit-btn');
+        const togglePassword = document.getElementById('toggle-password');
+
+        // Password visibility toggle
+        togglePassword.addEventListener('click', function() {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          this.classList.toggle('fa-eye');
+          this.classList.toggle('fa-eye-slash');
+        });
+
+        // Name validation
+        nameInput.addEventListener('input', function() {
+          const nameRegex = /^[A-Za-z\s]+$/;
+          if (!nameRegex.test(this.value) || this.value.length < 2) {
+            this.parentElement.classList.add('error');
+            document.getElementById('name-error').style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            document.getElementById('name-error').style.display = 'none';
+          }
+        });
+
+        // Email validation
+        emailInput.addEventListener('input', function() {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(this.value)) {
+            this.parentElement.classList.add('error');
+            document.getElementById('email-error').style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            document.getElementById('email-error').style.display = 'none';
+          }
+        });
+
+        // Password validation
+        function validatePassword(password) {
+          const requirements = {
+            length: password.length >= 8,
+            uppercase: /[A-Z]/.test(password),
+            lowercase: /[a-z]/.test(password),
+            number: /[0-9]/.test(password),
+            special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+          };
+
+          // Update requirement indicators
+          document.getElementById('length-req').className = `requirement ${requirements.length ? 'valid' : 'invalid'}`;
+          document.getElementById('length-req').querySelector('i').className = `fas fa-${requirements.length ? 'check' : 'times'}`;
+          
+          document.getElementById('uppercase-req').className = `requirement ${requirements.uppercase ? 'valid' : 'invalid'}`;
+          document.getElementById('uppercase-req').querySelector('i').className = `fas fa-${requirements.uppercase ? 'check' : 'times'}`;
+          
+          document.getElementById('lowercase-req').className = `requirement ${requirements.lowercase ? 'valid' : 'invalid'}`;
+          document.getElementById('lowercase-req').querySelector('i').className = `fas fa-${requirements.lowercase ? 'check' : 'times'}`;
+          
+          document.getElementById('number-req').className = `requirement ${requirements.number ? 'valid' : 'invalid'}`;
+          document.getElementById('number-req').querySelector('i').className = `fas fa-${requirements.number ? 'check' : 'times'}`;
+          
+          document.getElementById('special-req').className = `requirement ${requirements.special ? 'valid' : 'invalid'}`;
+          document.getElementById('special-req').querySelector('i').className = `fas fa-${requirements.special ? 'check' : 'times'}`;
+
+          return Object.values(requirements).every(req => req);
+        }
+
+        passwordInput.addEventListener('input', function() {
+          const isValid = validatePassword(this.value);
+          if (!isValid) {
+            this.parentElement.classList.add('error');
+            document.getElementById('password-error').style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            document.getElementById('password-error').style.display = 'none';
+          }
+        });
+
+        // Address validation
+        addressInput.addEventListener('input', function() {
+          if (this.value.length < 10) {
+            this.parentElement.classList.add('error');
+            document.getElementById('address-error').style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            document.getElementById('address-error').style.display = 'none';
+          }
+        });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Validate form before submission
+          const emailValid = emailInput.value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
+          const passwordValid = passwordInput.value.length >= 8;
+          const nameValid = nameInput.value.trim().length > 0;
+          const addressValid = addressInput.value.trim().length > 0;
+
+          if (!emailValid || !passwordValid || !nameValid || !addressValid) {
+            if (!emailValid) {
+              emailInput.parentElement.classList.add('error');
+              document.getElementById('email-error').style.display = 'block';
+            }
+            if (!passwordValid) {
+              passwordInput.parentElement.classList.add('error');
+              document.getElementById('password-error').style.display = 'block';
+            }
+            if (!nameValid) {
+              nameInput.parentElement.classList.add('error');
+              document.getElementById('name-error').style.display = 'block';
+            }
+            if (!addressValid) {
+              addressInput.parentElement.classList.add('error');
+              document.getElementById('address-error').style.display = 'block';
+            }
+            return;
+          }
+
+          // Disable submit button and show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing up...';
+
+          try {
+            // Get existing users from localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if user already exists
+            if (users.some(u => u.email === emailInput.value)) {
+              throw new Error('Email already registered');
+            }
+
+            // Create new user
+            const newUser = {
+              email: emailInput.value,
+              name: nameInput.value,
+              address: addressInput.value,
+              password: passwordInput.value // In a real app, this would be hashed
+            };
+
+            // Add new user to users array
+            users.push(newUser);
+
+            // Save users back to localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Show success message
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Success!';
+            setTimeout(() => {
+              // Redirect to sign in page
+              window.location.href = 'signin.html';
+            }, 1000);
+          } catch (error) {
+            console.error('Sign up error:', error);
+            submitBtn.innerHTML = 'Sign Up';
+            submitBtn.disabled = false;
+            alert(error.message || 'Network error. Please try again.');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

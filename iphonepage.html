@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiwokuhle Technologies PTY(LTD)</title>
+    <link rel="stylesheet" href="Iphone.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- 3D Cube Room Background -->
+    <div class="cube-room">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+
+        <header class="main-header">
+            <div class="container header-flex">
+                <!-- Brand/Icon Far Left -->
+                <div class="brand">
+                    <i class="ri-apple-fill"></i>
+                    <span>The CNR Gadgets</span>
+                </div>
+                <!-- Links Centered -->
+                <nav class="nav-links" id="navLinks">
+                    <a href="Index.html">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Support</a>
+                    <a href="#">About</a>
+                </nav>
+                <!-- Icons Far Right -->
+                <div class="header-icons">
+                    <a href="signin.html" class="icon-link" aria-label="User Login">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="cart.html" class="icon-link" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <a href="#">Contact</a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                        <i class="ri-menu-3-line"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+    <!-- Special Offers Banner -->
+    <div class="special-banner">
+      <h1>Student Sale</h1>
+      <p>Limited time deals on selected iPhone models</p>
+    </div>
+
+    <!-- Product Grid Section -->
+    <main>
+      <section class="product-grid">
+        <!-- iPhone 7 Plus -->
+        <section class="product" id="iPhone-7-Plus">
+          <img
+            src="Images/Iphone 7 plus.jpg"
+            alt="iPhone 7 Plus"
+            class="product-image"
+          />
+          <h2>iPhone 7 Plus</h2>
+          <p class="price">From R3200</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: white"
+              onclick="selectColor('iPhone-7-Plus', 'white')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: black"
+              onclick="selectColor('iPhone-7-Plus', 'black')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-7-Plus-storage">Storage:</label>
+            <select
+              id="iPhone-7-Plus-storage"
+              onchange="updatePrice('iPhone-7-Plus')"
+            >
+              <option value="32GB">32GB - R3200</option>
+              <option value="128GB">128GB - R3500</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-7-Plus', 'Images/Iphone 7 plus.jpg', 'iPhone 7 Plus')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-7-Plus')">
+            More Info
+          </button>
+          <div id="iPhone-7-Plus-info" class="more-info-details">
+            <p><strong>Color:</strong> Rose Gold, Black</p>
+            <p><strong>Storage:</strong> 32GB, 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 8 Plus -->
+        <section class="product" id="iPhone-8-Plus">
+          <img
+            src="Images/iphone_8_plus_silver.webp"
+            alt="iPhone 8 Plus"
+            class="product-image"
+          />
+          <h2>iPhone 8 Plus</h2>
+          <p class="price">R3700</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-8-Plus', 'silver')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: gold"
+              onclick="selectColor('iPhone-8-Plus', 'gold')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-8-Plus-storage">Storage:</label>
+            <select
+              id="iPhone-8-Plus-storage"
+              onchange="updatePrice('iPhone-8-Plus')"
+            >
+              <option value="64GB">64GB - R3700</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-8-Plus', 'Images/iphone_8_plus_silver.webp', 'iPhone 8 Plus')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-8-Plus')">
+            More Info
+          </button>
+          <div id="iPhone-8-Plus-info" class="more-info-details">
+            <p><strong>Color:</strong> Silver, Gold</p>
+            <p><strong>Storage:</strong> 64GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone X -->
+        <section class="product" id="iPhone-X">
+          <img src="Images/Iphone X.jpg" alt="iPhone X" class="product-image" />
+          <h2>iPhone X</h2>
+          <p class="price">R4000</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-X', 'silver')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: lightgray"
+              onclick="selectColor('iPhone-X', 'lightgray')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-X-storage">Storage:</label>
+            <select id="iPhone-X-storage" onchange="updatePrice('iPhone-X')">
+              <option value="64GB">64GB - R4000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-X', 'Images/Iphone X.jpg', 'iPhone X')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-X')">
+            More Info
+          </button>
+          <div id="iPhone-X-info" class="more-info-details">
+            <p><strong>Color:</strong> Silver, Space Gray</p>
+            <p><strong>Storage:</strong> 64GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone XR -->
+        <section class="product" id="iPhone-XR">
+          <img
+            src="Images/Iphone XR black.jpg"
+            alt="iPhone XR"
+            class="product-image"
+          />
+          <h2>iPhone XR</h2>
+          <p class="price">From R4500</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: black"
+              onclick="selectColor('iPhone-XR', 'black')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: white"
+              onclick="selectColor('iPhone-XR', 'white')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: red"
+              onclick="selectColor('iPhone-XR', 'red')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-XR-storage">Storage:</label>
+            <select id="iPhone-XR-storage" onchange="updatePrice('iPhone-XR')">
+              <option value="64GB">64GB - R4500</option>
+              <option value="128GB">128GB - R4900</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-XR', 'Images/Iphone XR black.jpg', 'iPhone XR')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-XR')">
+            More Info
+          </button>
+          <div id="iPhone-XR-info" class="more-info-details">
+            <p><strong>Color:</strong> Black, White, Red</p>
+            <p><strong>Storage:</strong> 64GB, 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 11 -->
+        <section class="product" id="iPhone-11">
+          <img
+            src="Images/Iphones 11RED.jpg"
+            alt="iPhone 11"
+            class="product-image"
+          />
+          <h2>iPhone 11</h2>
+          <p class="price">From R5500</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: red"
+              onclick="selectColor('iPhone-11', 'red')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: black"
+              onclick="selectColor('iPhone-11', 'black')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: white"
+              onclick="selectColor('iPhone-11', 'white')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-11-storage">Storage:</label>
+            <select id="iPhone-11-storage" onchange="updatePrice('iPhone-11')">
+              <option value="64GB">64GB - R5500</option>
+              <option value="128GB">128GB - R5900</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-11', 'Images/Iphones 11RED.jpg', 'iPhone 11')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-11')">
+            More Info
+          </button>
+          <div id="iPhone-11-info" class="more-info-details">
+            <p><strong>Color:</strong> Red, Black, White</p>
+            <p><strong>Storage:</strong> 64GB, 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 11 Pro -->
+        <section class="product" id="iPhone-11-Pro">
+          <img
+            src="Images/Iphone 11 pro 2.jpg"
+            alt="iPhone 11 Pro"
+            class="product-image"
+          />
+          <h2>iPhone 11 Pro</h2>
+          <p class="price">From R6700</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: green"
+              onclick="selectColor('iPhone-11-Pro', 'green')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-11-Pro', 'silver')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-11-Pro-storage">Storage:</label>
+            <select
+              id="iPhone-11-Pro-storage"
+              onchange="updatePrice('iPhone-11-Pro')"
+            >
+              <option value="64GB">64GB - R6700</option>
+              <option value="256GB">256GB - R7000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-11-Pro', 'Images/Iphone 11 pro 2.jpg', 'iPhone 11 Pro')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-11-Pro')">
+            More Info
+          </button>
+          <div id="iPhone-11-Pro-info" class="more-info-details">
+            <p><strong>Color:</strong> Midnight Green, Silver</p>
+            <p><strong>Storage:</strong> 64GB, 256GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 12 -->
+        <section class="product" id="iPhone-12">
+          <img
+            src="Images/apple-iphone-12-pro-128gb-silver.jpg"
+            alt="iPhone 12"
+            class="product-image"
+          />
+          <h2>iPhone 12</h2>
+          <p class="price">From R6700</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: blue"
+              onclick="selectColor('iPhone-12', 'blue')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: black"
+              onclick="selectColor('iPhone-12', 'black')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-12-storage">Storage:</label>
+            <select id="iPhone-12-storage" onchange="updatePrice('iPhone-12')">
+              <option value="64GB">64GB - R6700</option>
+              <option value="128GB">128GB - R6900</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-12', 'Images/apple-iphone-12-pro-128gb-silver.jpg', 'iPhone 12')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-12')">
+            More Info
+          </button>
+          <div id="iPhone-12-info" class="more-info-details">
+            <p><strong>Color:</strong> Blue, Black</p>
+            <p><strong>Storage:</strong> 64GB, 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 12 Pro -->
+        <section class="product" id="iPhone-12-Pro">
+          <img
+            src="Images/Iphone 12 Proo.webp"
+            alt="iPhone 12 Pro"
+            class="product-image"
+          />
+          <h2>iPhone 12 Pro</h2>
+          <p class="price">From R9500</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-12-Pro', 'silver')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: darkcyan"
+              onclick="selectColor('iPhone-12-Pro', 'darkcyan')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-12-Pro-storage">Storage:</label>
+            <select
+              id="iPhone-12-Pro-storage"
+              onchange="updatePrice('iPhone-12-Pro')"
+            >
+              <option value="128GB">128GB - R9500</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-12-Pro', 'Images/Iphone 12 Proo.webp', 'iPhone 12 Pro')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-12-Pro')">
+            More Info
+          </button>
+          <div id="iPhone-12-Pro-info" class="more-info-details">
+            <p><strong>Color:</strong> Silver, Graphite</p>
+            <p><strong>Storage:</strong> 128GB, 256GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 13 -->
+        <section class="product" id="iPhone-13">
+          <img
+            src="Images/Iphone13 silver.avif"
+            alt="iPhone 13"
+            class="product-image"
+          />
+          <h2>iPhone 13</h2>
+          <p class="price">From R8800</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: pink"
+              onclick="selectColor('iPhone-13', 'pink')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: blue"
+              onclick="selectColor('iPhone-13', 'blue')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-13-storage">Storage:</label>
+            <select id="iPhone-13-storage" onchange="updatePrice('iPhone-13')">
+              <option value="128GB">128GB - R8800</option>
+              <option value="256GB">256GB - R9000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-13', 'Images/Iphone13 silver.avif', 'iPhone 13')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-13')">
+            More Info
+          </button>
+          <div id="iPhone-13-info" class="more-info-details">
+            <p><strong>Color:</strong> Pink, Blue</p>
+            <p><strong>Storage:</strong> 128GB, 256GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 13 Pro Max -->
+        <section class="product" id="iPhone-13-Pro-Max">
+          <img
+            src="Images/Iphone13 silver.avif"
+            alt="iPhone 13 Pro Max"
+            class="product-image"
+          />
+          <h2>iPhone 13 Pro Max</h2>
+          <p class="price">From R11500</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-13-Pro-Max', 'silver')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: gold"
+              onclick="selectColor('iPhone-13-Pro-Max', 'gold')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: graphite"
+              onclick="selectColor('iPhone-13-Pro-Max', 'graphite')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-13-Pro-Max-storage">Storage:</label>
+            <select id="iPhone-13-Pro-Max-storage" onchange="updatePrice('iPhone-13-Pro-Max')">
+              <option value="128GB">128GB - R11500</option>
+              <option value="256GB">256GB - R14000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-13-Pro-Max', 11500, 'Iphone13 silver.avif', 'iPhone 13 Pro Max', true)"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-13-Pro-Max')">
+            More Info
+          </button>
+          <div id="iPhone-13-Pro-Max-info" class="more-info-details">
+            <p><strong>Color:</strong> Silver, Gold, Graphite</p>
+            <p><strong>Storage:</strong> 128GB, 256GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 14 -->
+        <section class="product" id="iPhone-14">
+          <img
+            src="Images/Iphone 14.jpg"
+            alt="iPhone 14"
+            class="product-image"
+          />
+          <h2>iPhone 14</h2>
+          <p class="price">R10000</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: purple"
+              onclick="selectColor('iPhone-14', 'purple')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: black"
+              onclick="selectColor('iPhone-14', 'black')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-14-storage">Storage:</label>
+            <select id="iPhone-14-storage" onchange="updatePrice('iPhone-14')">
+              <option value="128GB">128GB - R10000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-14', 'Images/Iphone 14.jpg', 'iPhone 14')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-14')">
+            More Info
+          </button>
+          <div id="iPhone-14-info" class="more-info-details">
+            <p><strong>Color:</strong> Purple, Midnight</p>
+            <p><strong>Storage:</strong> 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 14 Pro -->
+        <section class="product" id="iPhone-14-Pro">
+          <img
+            src="Images/Iphone 13 pro.png"
+            alt="iPhone 14 Pro"
+            class="product-image"
+          />
+          <h2>iPhone 14 Pro</h2>
+          <p class="price">R13500</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: gold"
+              onclick="selectColor('iPhone-14-Pro', 'gold')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: black"
+              onclick="selectColor('iPhone-14-Pro', 'black')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-14-Pro-storage">Storage:</label>
+            <select
+              id="iPhone-14-Pro-storage"
+              onchange="updatePrice('iPhone-14-Pro')"
+            >
+              <option value="128GB">128GB - R12900</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-14-Pro', 'Images/Iphone 13 pro.png', 'iPhone 14 Pro')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-14-Pro')">
+            More Info
+          </button>
+          <div id="iPhone-14-Pro-info" class="more-info-details">
+            <p><strong>Color:</strong> Gold, Space Black</p>
+            <p><strong>Storage:</strong> 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 14 Pro Max -->
+        <section class="product" id="iPhone-14-Pro-Max">
+          <img
+            src="Images/Iphone13 silver.avif"
+            alt="iPhone 14 Pro Max"
+            class="product-image"
+          />
+          <h2>iPhone 14 Pro Max</h2>
+          <p class="price">R15900</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: silver"
+              onclick="selectColor('iPhone-14-Pro-Max', 'silver')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: darkorchid"
+              onclick="selectColor('iPhone-14-Pro-Max', 'darkorchid')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-14-Pro-Max-storage">Storage:</label>
+            <select
+              id="iPhone-14-Pro-Max-storage"
+              onchange="updatePrice('iPhone-14-Pro-Max')"
+            >
+              <option value="128GB">128GB - R15900</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-14-Pro-Max', 'Images/Iphone13 silver.avif', 'iPhone 14 Pro Max')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-14-Pro-Max')">
+            More Info
+          </button>
+          <div id="iPhone-14-Pro-Max-info" class="more-info-details">
+            <p><strong>Color:</strong> Silver, Deep Purple</p>
+            <p><strong>Storage:</strong> 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 15 -->
+        <section class="product" id="iPhone-15">
+          <img
+            src="Images/Iphone13Pink.jpeg"
+            alt="iPhone 15"
+            class="product-image"
+          />
+          <h2>iPhone 15</h2>
+          <p class="price">R13000</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: pink"
+              onclick="selectColor('iPhone-15', 'pink')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: blue"
+              onclick="selectColor('iPhone-15', 'blue')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-15-storage">Storage:</label>
+            <select id="iPhone-15-storage" onchange="updatePrice('iPhone-15')">
+              <option value="128GB">128GB - R13000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-15', 'Images/Iphone13Pink.jpeg', 'iPhone 15')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-15')">
+            More Info
+          </button>
+          <div id="iPhone-15-info" class="more-info-details">
+            <p><strong>Color:</strong> Pink, Blue</p>
+            <p><strong>Storage:</strong> 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 15 Pro -->
+        <section class="product" id="iPhone-15-Pro">
+          <img
+            src="Images/Iphone 12 Proo.webp"
+            alt="iPhone 15 Pro"
+            class="product-image"
+          />
+          <h2>iPhone 15 Pro</h2>
+          <p class="price">R16000</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: purple"
+              onclick="selectColor('iPhone-15-Pro', 'purple')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: darkblue"
+              onclick="selectColor('iPhone-15-Pro', 'darkblue')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-15-Pro-storage">Storage:</label>
+            <select
+              id="iPhone-15-Pro-storage"
+              onchange="updatePrice('iPhone-15-Pro')"
+            >
+              <option value="128GB">128GB - R16000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-15-Pro', 'Images/Iphone 12 Proo.webp', 'iPhone 15 Pro')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-15-Pro')">
+            More Info
+          </button>
+          <div id="iPhone-15-Pro-info" class="more-info-details">
+            <p><strong>Color:</strong> Titanium, Black Titanium</p>
+            <p><strong>Storage:</strong> 128GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+
+        <!-- iPhone 15 Pro Max -->
+        <section class="product" id="iPhone-15-Pro-Max">
+          <img
+            src="Images/Iphone 13 pro.png"
+            alt="iPhone 15 Pro Max"
+            class="product-image"
+          />
+          <h2>iPhone 15 Pro Max</h2>
+          <p class="price">R18000</p>
+          <div class="color-selection">
+            <div
+              class="color-option selected"
+              style="background-color: purple"
+              onclick="selectColor('iPhone-15-Pro-Max', 'purple')"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: darkblue"
+              onclick="selectColor('iPhone-15-Pro-Max', 'darkblue')"
+            ></div>
+          </div>
+          <div class="storage-selection">
+            <label for="iPhone-15-Pro-Max-storage">Storage:</label>
+            <select
+              id="iPhone-15-Pro-Max-storage"
+              onchange="updatePrice('iPhone-15-Pro-Max')"
+            >
+              <option value="256GB">256GB - R18000</option>
+            </select>
+          </div>
+          <button
+            onclick="addToCart('iPhone-15-Pro-Max', 'Images/Iphone 13 pro.png', 'iPhone 15 Pro Max')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('iPhone-15-Pro-Max')">
+            More Info
+          </button>
+          <div id="iPhone-15-Pro-Max-info" class="more-info-details">
+            <p><strong>Color:</strong> Titanium, Blue Titanium</p>
+            <p><strong>Storage:</strong> 256GB</p>
+            <p><strong>Battery Capacity:</strong> 95%</p>
+            <p><strong>Extras:</strong> Comes with charger and accessories</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+   <!-- ...existing code... -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <ul>
+        <li>
+          <a href="Information.html" target="_blank">
+            <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+            Email: pcele341@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="Information.html" target="_blank">
+            <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+            Phone: +27 68 446 6065
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@phiwokuhle_nanokitsupply?_t=ZM-8uoYMBvz8PF&_r=1" target="_blank">
+            <i class="fab fa-tiktok" style="color:#00e0d3; margin-right:7px;"></i>
+            TikTok: @phiwokuhle_nanokitsupply
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Information.html" target="_blank">About Us</a></li>
+        <li>
+          <a href="Information.html" target="_blank">Delivery Information</a>
+        </li>
+        <li>
+          <a href="Information.html" target="_blank">Return Conditions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>website Developed By</h3>
+      <ul>
+        <li>
+          <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+          Email:
+          <a href="mailto:pcele341@gmail.com">takiesandani@gmail.com</a>
+        </li>
+        <li>
+          <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+          Phone: <a href="tel:+27684466065">+27 76 260 9804</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p>&copy; Phiwokuhle Technologies PTY(LTD). All rights reserved</p>
+</footer>
+<!-- ...existing code... -->
+    <script src="script.js"></script>
+    <script src="CNR.js"></script>
+  </body>
+</html>

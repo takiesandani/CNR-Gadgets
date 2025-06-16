@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The CNR Gadgets</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Google Fonts for modern look -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <!-- Remix Icon for icons -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container header-flex">
+                <!-- Brand/Icon Far Left -->
+                <div class="brand">
+                    <i class="ri-apple-fill"></i>
+                    <span>The CNR Gadgets</span>
+                </div>
+                <!-- Links Centered -->
+                <nav class="nav-links" id="navLinks">
+                    <a href="iphonepage.html">Shop</a>
+                    <a href="#">Services</a>
+                    <a href="#">Support</a>
+                    <a href="#">About</a>
+                </nav>
+                <!-- Icons Far Right -->
+                <div class="header-icons">
+                    <a href="#">Contact</a>
+                    <a href="signin.html" class="icon-link" aria-label="User Login"><i class="ri-user-line"></i></a>
+                    <a href="cart.html" class="icon-link" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                        <i class="ri-menu-3-line"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <section class="promo-bg">
+          <img src="Images/Screenshot 2025-06-15 235755.png" alt="Welcome to The CNR Gadgets" />
+        </section>
+
+        <section class="hero-bg">
+            <div class="hero-container">
+                <div class="hero-text">
+                <h1>
+                    <i class="ri-apple-fill"></i> iPhone 16
+                </h1>
+                <div class="rainbow-text">Hello, Apple Intelligence.</div>
+                <div class="hero-price">
+                    <span>From</span>
+                    <span class="price-main">R26 999</span>
+                </div>
+                <div class="hero-save">
+                    <span class="save-red">SAVE</span> up to <span class="save-bold">R1000</span>
+                </div>
+                <a href="iphonepage.html" class="hero-btn">Shop now</a>
+                </div>
+                <div class="hero-image">
+                <img src="Images/WhiteIstore.png" alt="iPhone 16 Pro" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <h2 class="services-title">Our Services</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <i class="ri-exchange-dollar-line"></i>
+                    <h3>Trade-ins</h3>
+                    <p>Upgrade your device by trading in your old iPhone for a new one at great value.</p>
+                </div>
+                <div class="service-card">
+                    <i class="ri-money-dollar-circle-line"></i>
+                    <h3>Resell</h3>
+                    <p>Sell your used iPhone quickly and securely with our trusted resell program.</p>
+                </div>
+                <div class="service-card">
+                    <i class="ri-tools-line"></i>
+                    <h3>Repair iPhones</h3>
+                    <p>Professional repair services for all iPhone models, from battery to hardware issues.</p>
+                </div>
+                <div class="service-card">
+                    <i class="ri-smartphone-line"></i>
+                    <h3>iPhone Screen Replacement</h3>
+                    <p>Fast and reliable screen replacement for cracked or damaged iPhone screens.</p>
+                </div>
+            </div>
+        </section>
+
+                <!-- Product Grid Section -->
+        <section class="product-grid-section">
+            <div class="product-grid">
+                <div class="product-card card-blue animate-left">
+                    <div class="product-card-content">
+                        <h3><i class="ri-apple-fill"></i> <span class="save-red">Iphone 13</span></h3>
+                        <p>Stunning Liquid Retina display with power, portability and perfection.<br>
+                        <span class="save-red">SAVE up to R5000</span></p>
+                    </div>
+                    <img src="Images/Ironman.jpg" alt="iPad Air" />
+                </div>
+                <div class="product-card card-darkblue animate-right">
+                    <div class="product-card-content">
+                        <h3><i class="ri-apple-fill"></i> Iphone Charger</h3>
+                        <p>Fast Charger .</p>
+                    </div> 
+                    <img src="Images/Charger.jpg" alt="AirPods" />
+                </div>
+                <div class="product-card card-orange animate-left">
+                    <div class="product-card-content">
+                        <h3><i class="ri-apple-fill"></i> WATCH <span class="ultra">ULTRA 7</span></h3>
+                        <p>Titanium case built for extremes and tough environments.<br>
+                        <span class="price-main">R15 999</span><br>
+                        <span class="save-red">SAVE R3000</span></p>
+                    </div>
+                    <img src="Images/16Iphone.jpg" alt="Apple Watch Ultra 7" />
+                </div>
+                <div class="product-card card-grey animate-right">
+                    <div class="product-card-content">
+                        <h3>Trade in and upgrade.</h3>
+                        <p>Save and use your <b>trade-in value</b> as credit towards your latest Apple product.</p>
+                    </div>
+                    <img src="Images/Iphone Horizontal.jpeg" alt="Apple Products" />
+                </div>
+            </div>
+            <div class="product-video">
+                <video src="Videos/GreenIphone.mp4" autoplay loop muted playsinline></video>
+            </div>
+        </section>
+
+        <section class="payment-methods-showcase">
+            <h3 class="payment-title">So many ways to pay</h3>
+            <div class="payment-icons-row">
+                <!-- Apple Pay -->
+                <img src="https://img.icons8.com/color/48/000000/apple-pay.png" alt="Apple Pay" class="pay-icon" title="Apple Pay" />
+                <!-- Google Pay -->
+                <img src="https://img.icons8.com/color/48/000000/google-pay-india.png" alt="Google Pay" class="pay-icon" title="Google Pay" />
+                <!-- Mastercard -->
+                <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="Mastercard" class="pay-icon" title="Mastercard" />
+                <!-- Visa -->
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="pay-icon" title="Visa" />
+                <!-- Maestro -->
+                <img src="https://img.icons8.com/color/48/000000/maestro.png" alt="Maestro" class="pay-icon" title="Maestro" />
+                <!-- FNB -->
+                <img src="Images/FNB.jpg" alt="FNB" class="pay-icon" title="FNB" />
+                <!-- Capitec -->
+                <img src="Images/Capitec.jpg" alt="Capitec" class="pay-icon" title="Capitec" />
+                <!-- Standard Bank -->
+                <img src="Images/StandanrdBank.jpg" alt="Standard Bank" class="pay-icon" title="Standard Bank" />
+                <!-- Nedbank -->
+                <img src="Images/Nedbank.png" alt="Nedbank" class="pay-icon" title="Nedbank" />
+                <!-- Absa -->
+                <img src="Images/Absa.jpg" alt="Absa" class="pay-icon" title="Absa" />
+            </div>
+        </section>
+
+
+        <!-- Location Section -->
+        <section class="location-section">
+            <h2 class="location-title"><i class="ri-map-pin-2-line"></i> Find Us: Thohoyandou Busy Corner</h2>
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps?q=Thohoyandou+Busy+Corner&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 iStore. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

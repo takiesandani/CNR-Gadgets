@@ -1,0 +1,369 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff; /* Dark background for 3D effect */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  /* Remove overflow: hidden to allow scrolling */
+}
+
+/* 3D Cube Room Background */
+.cube-room {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* 3D perspective */
+  z-index: -1; /* Place behind content */
+}
+
+.cube {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 140, 255, 0.2);
+  transform-style: preserve-3d;
+  animation: float 10s infinite ease-in-out;
+}
+
+.cube:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cube:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.cube:nth-child(3) {
+  top: 80%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(180deg) rotateY(180deg);
+  }
+}
+
+/*======================================================================================Header design===========================================================================================*/
+/* Header section styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: relative; /* Ensure proper alignment */
+}
+
+/* Logo */
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+/* Navigation Links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between links and separators */
+  position: absolute; /* Position the nav in the center */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+}
+
+.nav-link {
+  font-size: 0.9em; /* Small font size */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.nav-separator {
+  font-size: 0.9em;
+  color: white;
+  user-select: none; /* Prevent selection of the separator */
+}
+
+/* Sign-In and Cart Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between icons */
+}
+
+/* Cart Icon */
+.cart {
+  position: relative; /* To position the cart count badge */
+}
+
+.cart a {
+  color: white; /* Icon color */
+  text-decoration: none; /* Remove underline */
+  font-size: 24px; /* Icon size */
+}
+
+.cart a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red; /* Badge color */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%; /* Round badge */
+  padding: 5px; /* Badge padding */
+  min-width: 10px; /* Ensures badge size remains consistent */
+  text-align: center;
+}
+
+.signin-button,
+.signup-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.signin-button:hover,
+.signup-button:hover {
+  background-color: #218838;
+}
+
+/* Sign-In Icon Styles */
+.signin-icon {
+  margin-left: auto; /* Push the icon to the right */
+  margin-right: 20px; /* Add space between the icon and the cart */
+}
+
+.signin-icon a {
+  color: white; /* Icon color */
+  text-decoration: none; /* Remove underline */
+  font-size: 24px; /* Icon size */
+}
+
+.signin-icon a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* ===============================================================================Product Grid Section==========================================================================================*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+  gap: 20px; /* Space between products */
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Place above 3D background */
+}
+
+.product {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: slideIn 1s ease-out; /* Slide-in animation */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain; /* Ensure images fit without cropping */
+}
+
+.product h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product .price {
+  font-size: 1.1em;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.product button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #0056b3;
+}
+
+/*==================================================*/
+
+/* Color Selection */
+.color-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.selected {
+  border: 2px solid #007bff;
+}
+
+/* Storage Selection */
+.storage-selection {
+  margin: 10px 0;
+}
+
+.storage-selection label {
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.storage-selection select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* More Info Button */
+.more-info {
+  background-color: #28a745;
+  margin-top: 5px;
+}
+
+.more-info:hover {
+  background-color: #218838;
+}
+
+/* More Info Details */
+.more-info-details {
+  display: none;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.special-banner {
+  background-color: #e53935;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.special-banner h1 {
+  margin: 0;
+}
+
+/*===================================================================================Footer Section=============================================================================================*/
+footer {
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent footer */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Place above 3D background */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Phiwokuhle Technologies</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+      }
+      .form-group.error input {
+        border-color: #dc3545;
+      }
+      .form-group.success input {
+        border-color: #28a745;
+      }
+      .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+      }
+      .form-group {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Sign In</h2>
+        <form id="signin-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Please enter a valid email address"
+            />
+            <div class="error-message" id="email-error">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required 
+              minlength="8"
+              title="Password must be at least 8 characters long"
+            />
+            <i class="fas fa-eye password-toggle" id="toggle-password"></i>
+            <div class="error-message" id="password-error">Password must be at least 8 characters long</div>
+          </div>
+          <button type="submit" class="btn-primary" id="submit-btn">Sign In</button>
+        </form>
+        <p class="auth-link">
+          Don't have an account? <a href="signup.html">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signin-form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const submitBtn = document.getElementById('submit-btn');
+        const togglePassword = document.getElementById('toggle-password');
+
+        // Password visibility toggle
+        togglePassword.addEventListener('click', function() {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          this.classList.toggle('fa-eye');
+          this.classList.toggle('fa-eye-slash');
+        });
+
+        // Email validation
+        emailInput.addEventListener('input', function() {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(this.value)) {
+            this.parentElement.classList.add('error');
+            emailError.style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            emailError.style.display = 'none';
+          }
+        });
+
+        // Password validation
+        passwordInput.addEventListener('input', function() {
+          if (this.value.length < 8) {
+            this.parentElement.classList.add('error');
+            passwordError.style.display = 'block';
+          } else {
+            this.parentElement.classList.remove('error');
+            passwordError.style.display = 'none';
+          }
+        });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Validate form before submission
+          const emailValid = emailInput.value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
+          const passwordValid = passwordInput.value.length >= 8;
+
+          if (!emailValid || !passwordValid) {
+            if (!emailValid) {
+              emailInput.parentElement.classList.add('error');
+              emailError.style.display = 'block';
+            }
+            if (!passwordValid) {
+              passwordInput.parentElement.classList.add('error');
+              passwordError.style.display = 'block';
+            }
+            return;
+          }
+
+          // Disable submit button and show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+
+          try {
+            // Get users from localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === emailInput.value);
+
+            if (!user) {
+              throw new Error('User not found. Please sign up first.');
+            }
+
+            // Verify password (in a real app, this would be done server-side with hashed passwords)
+            if (user.password !== passwordInput.value) {
+              throw new Error('Invalid password');
+            }
+
+            // Store user in localStorage
+            localStorage.setItem('user', JSON.stringify({
+              email: user.email,
+              name: user.name,
+              address: user.address
+            }));
+
+            // Show success message
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Success!';
+            setTimeout(() => {
+              // Redirect to previous page or home
+              const urlParams = new URLSearchParams(window.location.search);
+              const redirect = urlParams.get('redirect');
+              window.location.href = redirect || 'index.html';
+            }, 1000);
+          } catch (error) {
+            console.error('Sign in error:', error);
+            submitBtn.innerHTML = 'Sign In';
+            submitBtn.disabled = false;
+            alert(error.message || 'Network error. Please try again.');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

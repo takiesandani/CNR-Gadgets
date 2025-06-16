@@ -1,0 +1,102 @@
+<!--This is the html page file for the cart-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shopping cart for Phiwokuhle Technologies - Your trusted source for iPhones, gadgets, and tech protection"
+    />
+    <title>Cart - Phiwokuhle Technologies PTY(LTD)</title>
+    <link rel="stylesheet" href="Cart.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="READY.css" />
+    <!-- Link to FontAwesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Yoco SDK -->
+    <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
+  </head>
+  <body>
+      <header class="main-header">
+          <div class="container header-flex">
+              <!-- Brand/Icon Far Left -->
+              <div class="brand">
+                  <i class="ri-apple-fill"></i>
+                  <span>Cart</span>
+              </div>
+              <!-- Links Centered -->
+              <nav class="nav-links" id="navLinks">
+                  <a href="Index.html">Home</a>
+                  <a href="iphonepage.html">Shop</a>
+                  <a href="#">Support</a>
+                  <a href="#">About</a>
+              </nav>
+              <!-- Icons Far Right -->
+              <div class="header-icons">
+                  <a href="#">Contact</a>
+                  <a href="signin.html" class="icon-link" aria-label="User Login"><i class="ri-user-line"></i></a>
+                  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                      <i class="ri-menu-3-line"></i>
+                  </button>
+              </div>
+          </div>
+      </header>
+
+    <main>
+      <!-- Cart Items List -->
+      <section class="cart-items">
+        <h2>Cart Items</h2>
+        <div id="cart-list">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+      </section>
+
+      <!-- User Details Form -->
+      <section class="user-details">
+        <h2>Enter Your Details</h2>
+        <form id="checkout-form">
+          <!-- Location (Address)
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
+                </div>
+
+                Google Maps Embed 
+                <div class="map-container">
+                    <iframe
+                        id="map-frame"
+                        width="100%"
+                        height="300"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=South+Africa">
+                    </iframe>
+                </div>
+            -->
+          <!-- Submit Button -->
+          <button
+            type="button"
+            class="checkout-button"
+            id="checkout-button"
+            onclick="window.location.href='checkout.html'"
+          >
+            <i class="fas fa-lock"></i> Proceed to Secure Checkout
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Phiwokuhle Technologies PTY(LTD). All rights reserved.</p>
+    </footer>
+
+    <!-- Load cart.js after DOM is ready -->
+    <script src="cart.js"></script>
+  </body>
+</html>
