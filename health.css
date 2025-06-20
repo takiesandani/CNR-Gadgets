@@ -7,6 +7,16 @@ body {
   color: rgb(0, 0, 0);
   text-align: center;
   /* Remove overflow: hidden to allow scrolling */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 3D Cube Room Background */
@@ -138,113 +148,193 @@ header {
   min-width: 10px; /* Ensures badge size remains consistent */
   text-align: center;
 }
+/*============================================================================================Product Grid======================================================================================*/
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+  align-items: center; /* Add this line */
+}
 
-.signin-button,
-.signup-button {
-  background-color: #28a745;
+.product {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Gallery Styles */
+.gallery-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-image.active {
+  opacity: 1;
+}
+
+.gallery-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.gallery-prev,
+.gallery-next {
+  background-color: rgba(0, 102, 204, 0.7);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+  background-color: rgba(0, 77, 153, 0.9);
+}
+
+/* Rest of the product styles remain the same */
+.product h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.price {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #0066cc;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #0066cc;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
-}
-
-.signin-button:hover,
-.signup-button:hover {
-  background-color: #218838;
-}
-
-/* Sign-In Icon Styles */
-.signin-icon {
-  margin-left: auto; /* Push the icon to the right */
-  margin-right: 20px; /* Add space between the icon and the cart */
-}
-
-.signin-icon a {
-  color: white; /* Icon color */
-  text-decoration: none; /* Remove underline */
-  font-size: 24px; /* Icon size */
-}
-
-.signin-icon a:hover {
-  color: #007bff; /* Change color on hover */
-}
-
-/* ===============================================================================Product Grid Section==========================================================================================*/
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
-  gap: 20px; /* Space between products */
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1; /* Place above 3D background */
-}
-
-.product {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  animation: slideIn 1s ease-out; /* Slide-in animation */
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.product-image {
-  width: 100%;
-  height: auto;
-  max-height: 150px;
-  object-fit: contain; /* Ensure images fit without cropping */
-}
-
-.product h2 {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-.product .price {
-  font-size: 1.1em;
-  color: #007bff;
-  margin: 10px 0;
-}
-
-.product button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
+  margin: 5px 0;
   transition: background-color 0.3s ease;
 }
 
-.product button:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: #004d99;
 }
 
-/*==================================================*/
+.more-info {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.more-info:hover {
+  background-color: #ddd;
+}
+
+.more-info-details {
+  display: none;
+  text-align: left;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* Product Description Section */
+.product-description {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-description h1 {
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.features-list {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.features-list h2 {
+  color: #0066cc;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.features-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features-list li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.features-list li:before {
+  content: '✓';
+  color: #0066cc;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
 
 /* Color Selection */
 .color-selection {
@@ -271,50 +361,26 @@ header {
   border: 2px solid #007bff;
 }
 
-/* Storage Selection */
-.storage-selection {
-  margin: 10px 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.storage-selection label {
-  font-size: 0.9em;
-  margin-right: 10px;
-}
-
-.storage-selection select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-/* More Info Button */
-.more-info {
-  background-color: #28a745;
-  margin-top: 5px;
-}
-
-.more-info:hover {
-  background-color: #218838;
-}
-
-/* More Info Details */
-.more-info-details {
-  display: none;
-  margin-top: 10px;
-  text-align: left;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.special-banner {
-  background-color:#007bff;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-.special-banner h1 {
-  margin: 0;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /*===================================================================================Footer Section=============================================================================================*/
@@ -366,62 +432,4 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9em;
-}
-
-.footer-contact-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.footer-contact-list li {
-  margin-bottom: 12px;
-}
-
-.footer-contact-list a {
-  color: #00e0d3;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 1.08em;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-}
-
-.footer-contact-list a:hover {
-  color: #ff0000;
-  text-decoration: underline;
-}
-
-/* New styles for the main navigation bar */
-.main-navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  background: linear-gradient(90deg, #00a2ff 60%, #0400ff 100%);
-  padding: 8px 0;
-  border-radius: 0 0 1px 1px;
-  margin-top: -50px; /* Overlap with the header */
-  margin-bottom: 3px;
-  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.08);
-}
-
-.navbar-link {
-  color: #fff;
-  font-size: 1.15em;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 8px 22px;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  letter-spacing: 0.5px;
-}
-
-.navbar-link:hover,
-.navbar-link:focus {
-  background: rgba(255, 255, 255, 0.18);
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0, 224, 211, 0.12);
-  text-decoration: underline;
 }

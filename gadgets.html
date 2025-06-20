@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiwokuhle Technologies</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Health.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- 3D Cube Room Background -->
+    <div class="cube-room">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+
+        <header class="main-header">
+            <div class="container header-flex">
+                <!-- Brand/Icon Far Left -->
+                <div class="brand">
+                    <i class="ri-apple-fill"></i>
+                    <span>The CNR Gadgets</span>
+                </div>
+                <!-- Links Centered -->
+                <nav class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="iphonepage.html">Shop</a>
+                    <a href="gadgets.html">Gadgets</a>
+                    <a href="#">Services</a>
+                    <a href="information.html">Support</a>
+                </nav>
+                <!-- Icons Far Right -->
+                <div class="header-icons">
+                    <a href="information.html">Contact</a>
+                    <a href="signin.html" class="icon-link" aria-label="User Login"><i class="ri-user-line"></i></a>
+                    <a href="cart.html" class="icon-link" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                        <i class="ri-menu-3-line"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+    <!-- Product Grid Section -->
+    <main>
+      <section class="product-grid">
+        <!-- Pink Kids Tablet -->
+        <section class="product" id="Kids-Pink-Tablet">
+          <div class="product-image-container">
+            <img
+              src="Images/Charger.jpg"
+              alt="Kids Pink Tablet"
+              class="product-image"
+            />
+          </div>
+          <h2>Iphone Charger</h2>
+          <p class="price">R250</p>
+          <!-- Example for a product -->
+          <button
+            class="add-to-cart"
+            data-id="Iphone-Charger"
+            data-name="Iphone Charger"
+            data-image="Images/Charger.jpg"
+            data-price="250"
+            data-color="C-Type to Iphone"
+            data-storage="Includes Cable"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('Iphone-Charger')">
+            More Info
+          </button>
+          <div id="Iphone-Charger" class="more-info-details">
+            <p><strong>Adater</strong> C-Type port</p>
+            <p><strong>Cable</strong> C-Type to Iphone</p>
+          </div>
+        </section>
+
+        <!-- Blue Kids Tablet -->
+        <section class="product" id="C-C-Type">
+          <div class="product-image-container">
+            <img
+              src="Images/C-C.webp"
+              alt="Kids Blue Tablet"
+              class="product-image"
+            />
+          </div>
+          <h2>C-CType</h2>
+          <p class="price">R80</p>
+        <button
+          class="add-to-cart"
+          data-id="C-C-Type-Cable"
+          data-name="C-C Type Cable"
+          data-image="Images/C-C.webp"
+          data-price="79.99"
+          data-color="White"
+          data-storage="1 Meter"
+        >
+          Add to Cart
+        </button>
+          <button class="more-info" onclick="showMoreInfo('Kids-Blue-Tablet')">
+            More Info
+          </button>
+          <div id="Kids-Blue-Tablet-info" class="more-info-details">
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>Size:</strong> 7 inch</p>
+          </div>
+        </section>
+
+        <!-- Green Smartwatch -->
+        <section class="product" id="Green-Smartwatch">
+          <div class="product-image-container">
+            <img
+              src="Images/Ctype - Iphone.webp"
+              alt="Iphone-Cable"
+              class="product-image"
+            />
+          </div>
+          <h2>Iphone Cable</h2>
+          <p class="price">R80</p>
+        <button
+          class="add-to-cart"
+          data-id="Iphone-Cable"
+          data-name="iPhone Cable"
+          data-image="Images/Ctype - Iphone.webp"
+          data-price="80.00"
+          data-color="White"
+          data-storage="1 Meter"
+        >
+          Add to Cart
+        </button>
+          <button
+            class="more-info"
+            onclick="showMoreInfo('Smartwatch-HK10-Pro-Max-Green')"
+          >
+            More Info
+          </button>
+          <div
+            id="Smartwatch-HK10-Pro-Max-Green-info"
+            class="more-info-details"
+          >
+            <p><strong>Color:</strong> Green</p>
+            <p><strong>Accessories:</strong> Charger</p>
+          </div>
+        </section>
+
+        <!-- White Smartwatch -->
+        <section class="product" id="C-Type-Adpater">
+          <div class="product-image-container">
+            <img
+              src="Images/Adpter.webp"
+              alt="Adpater"
+              class="product-image"
+            />
+          </div>
+          <h2>C type Adpater</h2>
+          <p class="price">R99.99</p>
+        <button
+          class="add-to-cart"
+          data-id="C-Type-Adapter"
+          data-name="C Type Adapter"
+          data-image="Images/Adpter.webp"
+          data-price="149.99"
+          data-color="Black"
+          data-storage="Adapter Only"
+        >
+          Add to Cart
+        </button>
+          <button
+            class="more-info"
+            onclick="showMoreInfo('Smartwatch-HK10-Pro-Max-White')"
+          >
+            More Info
+          </button>
+          <div
+            id="Smartwatch-HK10-Pro-Max-White-info"
+            class="more-info-details"
+          >
+            <p><strong>Color:</strong> White</p>
+            <p><strong>Accessories:</strong> Charger</p>
+          </div>
+        </section>
+
+        <!-- Power Bank -->
+        <section class="product" id="Power-Bank">
+          <div class="product-image-container">
+            <img
+              src="Images/PowerBank.jpeg"
+              alt="Power Bank"
+              class="product-image"
+            />
+          </div>
+          <h2>Power Bank</h2>
+          <p class="price">R350</p>
+          <button
+            onclick="addToCart('Power-Bank', 350, 'PowerBank.jpeg', 'Power Bank', 'Black', '10000mAh Capacity')"
+          >
+            Add to Cart
+          </button>
+          <button class="more-info" onclick="showMoreInfo('Power-Bank')">
+            More Info
+          </button>
+          <div id="Power-Bank-info" class="more-info-details">
+            <p><strong>Color:</strong> Black</p>
+            <p><strong>Capacity:</strong> 10000mAh</p>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+                Email: Tshamanoorifha24@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+                Phone: +27 66 111 5944
+              </a>
+            </li>
+            <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+                Email: Tshamanoronewa24@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+                Phone: +27 82 939 3797
+              </a>
+            </li>
+                    <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+                Email: Luvhanihify@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="Information.html" target="_blank">
+                <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+                Phone: +27 79 093 1394
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="Information.html" target="_blank">About Us</a></li>
+            <li>
+              <a href="Information.html" target="_blank">Delivery Information</a>
+            </li>
+            <li>
+              <a href="Information.html" target="_blank">Return Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>website Developed By</h3>
+          <ul>
+            <li>
+              <i class="fas fa-envelope" style="color:#00e0d3; margin-right:7px;"></i>
+              Email:
+              <a href="mailto:takiesandani@gmail">takiesandani@gmail.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone" style="color:#00e0d3; margin-right:7px;"></i>
+              Phone: <a href="tel:+27684466065">+27 76 260 9804</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>&copy; 2025 The CNR Gadgets IStore. All rights reserved</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
