@@ -30,6 +30,18 @@ body {
   z-index: -1; /* Place behind content */
 }
 
+.brand {
+  color: #111 !important;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.brand i {
+  color: #000000 !important; /* Optional: make the apple icon blue */
+}
+
 .cube {
   position: absolute;
   width: 200px;

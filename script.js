@@ -7,6 +7,13 @@ if (menuToggle && navLinks) {
   });
 }
 
+// Close mobile nav when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
 // Animate product cards on scroll
 function animateCardsOnScroll() {
   const cards = document.querySelectorAll('.product-card');

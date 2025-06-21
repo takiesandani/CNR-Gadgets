@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout - Phiwokuhle Technologies</title>
+    <title>Checkout - The CNR Gadgets</title>
     <link rel="stylesheet" href="checkout.css" />
     <link
       rel="stylesheet"
@@ -16,7 +16,7 @@
     <header class="checkout-header">
       <div class="container">
         <a href="index.html" class="logo">
-          <img src="Images/Phiwo'sLogo.jpg" alt="Phiwokuhle Technologies" />
+          <img src="Images/Screenshot 2025-06-15 235755.WebP" alt="The CNR Gadgets" />
         </a>
         <div class="checkout-progress">
           <div class="step active">
@@ -144,19 +144,19 @@
                     <h3><i class="fas fa-university"></i> Banking Details</h3>
                     <div class="detail-row">
                       <span>Bank:</span>
-                      <span>ABSA</span>
+                      <span>#</span>
                     </div>
                     <div class="detail-row">
                       <span>Account Name:</span>
-                      <span>Phiwokuhle Cele</span>
+                      <span>#</span>
                     </div>
                     <div class="detail-row">
                       <span>Account Number:</span>
-                      <span>939 301 5315</span>
+                      <span>#</span>
                     </div>
                     <div class="detail-row">
                       <span>Branch Code:</span>
-                      <span>632005 </span>
+                      <span>#</span>
                     </div>
                     <div class="detail-row">
                       <span>Reference:</span>
@@ -168,7 +168,7 @@
                     </div>
                     <p class="note">
                       Please send proof of payment to
-                      <strong>phiwokuhletechnologies@gmail.com</strong>
+                      <strong>Luvhanihify@gmail.com</strong>
                     </p>
                   </div>
                 </div>
@@ -192,7 +192,7 @@
     <footer class="checkout-footer">
       <div class="container">
         <p>
-          &copy; 2025 Phiwokuhle Technologies PTY(LTD). All rights reserved.
+          &copy; 2025 The CNR Gadgets(LTD). All rights reserved.
         </p>
       </div>
     </footer>
@@ -200,9 +200,9 @@
     <script src="cart.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize cart and user data
-        const cartManager = new CartManager();
-        const cart = cartManager.getCart();
+        
+        if (!window.cartManager) window.cartManager = new CartManager();
+        const cart = window.cartManager.cart;
         const user = JSON.parse(localStorage.getItem('user')) || {};
         
         // DOM Elements

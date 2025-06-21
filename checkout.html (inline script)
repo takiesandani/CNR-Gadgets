@@ -1,0 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize CartManager globally if not already
+  if (!window.cartManager) window.cartManager = new CartManager();
+  const cart = window.cartManager.cart;
+  // ...rest of your code...

@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>The CNR Gadgets</title>
+        <title>The CNR Gadgets | Official Store</title>
+        <meta name="description" content="The CNR Gadgets - Official online store for iPhones, gadgets, and tech protection. Shop the latest Apple products and accessories." />
         <link rel="stylesheet" href="style.css" />
         <!-- Google Fonts for modern look -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -17,35 +18,34 @@
     <body>
         <header class="main-header">
             <div class="container header-flex">
-                <!-- Brand/Icon Far Left -->
+                <!-- Brand Far Left -->
                 <div class="brand">
-                    <i class="ri-apple-fill"></i>
-                    <span>The CNR Gadgets</span>
+                <i class="ri-apple-fill"></i>
+                <span>CNR Gadgets</span>
                 </div>
-                <!-- Links Centered -->
+                <!-- Navigation Links -->
                 <nav class="nav-links" id="navLinks">
-                    <a href="iphonepage.html">Shop</a>
-                    <a href="gadgets.html">Gadgets</a>
-                    <a href="#">Services</a>
-                    <a href="information.html">Support</a>
+                <a href="iphonepage.html">Shop</a>
+                <a href="gadgets.html">Gadgets</a>
+                <a href="#">Services</a>
+                <a href="information.html">Contact</a>
                 </nav>
                 <!-- Icons Far Right -->
                 <div class="header-icons">
-                    <a href="information.html">Contact</a>
-                    <a href="signin.html" class="icon-link" aria-label="User Login"><i class="ri-user-line"></i></a>
-                    <a href="cart.html" class="icon-link" aria-label="Shopping Cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cart-count">0</span>
-                    </a>
-                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                        <i class="ri-menu-3-line"></i>
-                    </button>
+                <a href="signin.html" class="icon-link" aria-label="User Login"><i class="ri-user-line"></i></a>
+                <a href="cart.html" class="icon-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                    <i class="ri-menu-3-line"></i>
+                </button>
                 </div>
             </div>
         </header>
 
         <section class="promo-bg">
-          <img src="Images/Screenshot 2025-06-15 235755.png" alt="Welcome to The CNR Gadgets" />
+          <img src="Images/Screenshot 2025-06-15 235755.WebP" alt="Welcome to The CNR Gadgets" />
         </section>
 
         <section class="hero-bg">
@@ -65,7 +65,7 @@
                 <a href="iphonepage.html" class="hero-btn">Shop now</a>
                 </div>
                 <div class="hero-image">
-                <img src="Images/WhiteIstore.png" alt="iPhone 16 Pro" />
+                <img src="Images/WhiteIstore.png" alt="iPhone 16 Pro" loading="lazy" />
                 </div>
             </div>
         </section>
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="product-video">
-                <video src="Videos/GreenIphone.mp4" autoplay loop muted playsinline></video>
+                <video src="Videos/GreenIphone.mp4" autoplay loop muted playsinline loading="lazy"></video>
             </div>
         </section>
 
@@ -228,8 +228,17 @@
             <p>&copy; 2025 The CNR Gadgets IStore. All rights reserved.</p>
         </footer>
 
-        <script src="script.js"></script>
-        <script src="CNR.js"></script>
-        <script src="cart.js"></script>
+        <script src="script.js" defer></script>
+        <script src="CNR.js" defer></script>
+        <script src="cart.js" defer></script>
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "The CNR Gadgets",
+        "url": "https://www.thecnrgadgets.store/",
+        "logo": "https://www.thecnrgadgets.store/logo.png"
+        }
+</script>
     </body>
 </html>
